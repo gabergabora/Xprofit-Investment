@@ -1,0 +1,128 @@
+.dashboard {
+    .head {text-align: center;}
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 20px;
+        &-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 0px 0px 1px $mainGreen;
+            &:hover {
+                box-shadow: 1px 1px 13px 2px $mainGreen;
+            }
+        }
+    }
+    .more {
+        display: flex;
+        flex-direction: column;
+        .top-link, &-tab {
+            display: flex;
+            justify-content: space-around;
+        }
+        .top, &-tab {width: 50%; align-self: center;}
+        .top input, &-tab .texts {
+            padding: 10px 15px;
+            width: 90%;
+            border: 1px solid $mainGreen;
+            border-radius: 7px 0px 0px 7px;
+        }
+        .top a, &-tab .svg {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            border-radius: 0px 7px 7px 0px;
+        }
+        .top {
+            input {
+                font-family: 'Lato', sans-serif;
+                background: transparent;
+                color: #fff;
+                &:focus {
+                    outline: 0px;
+                }
+            }
+            a {
+                background: $mainGreen;
+            }
+        }
+
+        &-tab {
+            .texts {
+                background: $mainGreen;
+                h5 {margin: 0px 0px 10px 0px;}
+                h3 {margin: 10px 0px 0px 0px;}
+            }
+            .svg {
+                border: 1px solid $mainGreen
+            }
+        }
+    }
+}
+
+.dashboard .popUp .buttons a, .deposit .popUp .buttons a , .userAdmin a, .userAdmin button, .payments .popUp .buttons a,  .plan .popUp .buttons a {
+    font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    outline: 0px;
+    border: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: $mainGreen;
+}
+
+.dashboard .popUp .buttons, .deposit .popUp .buttons , .userAdmin .popUp .buttons, .userAdmin .popUpLogout .buttons, .payments .popUp .buttons, .plan .popUp .buttons {
+    a, button {
+        padding: 10px 15px;
+        background: $white;
+        border-radius: 7px;
+    }
+}
+
+.userAdmin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    li {width: 50vw;}
+    .userLink {
+        width: 100%;
+    }
+}
+
+.user, .dashboard, .deposit, .payments, .plan {
+    position: relative;
+    &.pop {
+        .popUp {display: flex;}
+    }
+    &.log{
+        .popUpLogout{display: flex;}
+    }
+    .detail {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .popUp, .popUpLogout {
+        display: none;
+        width: 70%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $mainGreen;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 1px 1px 13px 2px #eb1010;
+        .buttons {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
