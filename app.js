@@ -519,7 +519,7 @@ const sendOTPpassword = async (email, res) => {
 
         //mail options
         const mailOptions = {
-            from: "admin@xprofitinvestment.ltd",
+            from: process.env.USER,
             to: email,
             subject:"Password Reset",
             html: `<div>
