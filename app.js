@@ -27,10 +27,11 @@ app.use(express.static('public'));
 
 const saltRounds = process.env.SALTROUNDS;
 
+const mongoUrl = process.env.MONGOURL;
 
 //mongoose connection: "mongodb://localhost:27017/xprofitDb"
 
-mongoose.connect("mongodb+srv://Asht001:xprofit@cluster0.izj7j9w.mongodb.net/xprofitDb",
+mongoose.connect(mongoUrl,
     { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
         if (err) {
             console.log(err)
