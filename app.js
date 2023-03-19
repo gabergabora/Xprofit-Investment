@@ -217,7 +217,7 @@ const sendOTPVerificationEmail = async (newUserDetails, res) => {
 
         //mail options
         const mailOptions = {
-            from: "admin@xprofitinvestment.ltd",
+            from: process.env.USER,
             to: newUserDetails.email,
             subject:"Confirm Your Xprofit Registration",
             html: `<div>
@@ -283,7 +283,7 @@ const resendsendOTPEmail = async (email, res) => {
 
         //mail options
         const mailOptions = {
-            from: "admin@xprofitinvestment.ltd",
+            from: process.env.USER,
             to: email,
             subject:"Confirm Your Xprofit Registration",
             html: `<div>
