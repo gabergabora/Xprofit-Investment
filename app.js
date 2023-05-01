@@ -124,8 +124,13 @@ app.post('/register', (req, res)=> {
                     password: password,
                     referer: ""
                 }
-
+                UserOTPVerification.findOneAndDelete({userEmail: email}, (error, docs)=> {
+            if (error) {
+                console.log(error)
+            } else {
                 sendOTPVerificationEmail(newUserDetails, res);
+            }
+
             }
         })
     }
@@ -203,8 +208,12 @@ app.post('/register/:referId', (req, res)=> {
                     password: password,
                     referer: referer
                 }
-
+                UserOTPVerification.findOneAndDelete({userEmail: email}, (error, docs)=> {
+            if (error) {
+                console.log(error)
+            } else {
                 sendOTPVerificationEmail(newUserDetails, res);
+        });
             }
         })
     }
