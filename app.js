@@ -639,6 +639,7 @@ app.get('/dashboard/:userId', (req, res)=> {
     const userId = req.params.userId;
     User.findOne({_id: userId}, (err, userDetails)=> {
         if(err) {
+		console.log(err);
             res.render('login', {
                 message: "Server Error! Please Try Again!",
                 prefix: "../"
@@ -1546,6 +1547,7 @@ app.get('/admin-plan/:planId', (req, res)=> {
     const {planId} = req.params;
     Deposit.findOne({_id: planId}, (err, deposit)=> {
         if(err) {
+		console.log(err);
             res.render('adminForm', {message: "Server Error! Please Try Again"});
         } else if(!deposit) {
             res.render('adminForm', {message: "Server Error! Please Try Again"});
@@ -1622,6 +1624,7 @@ app.get('/admin-active/:activeId', (req, res)=> {
     const {activeId} = req.params;
     ActivePlan.findOne({_id: activeId}, (err, active)=> {
         if(err) {
+		console.log(err);
             res.render('adminForm', {message: "Server Error! Please Try Again"});
         } else if(!active) {
             res.render('adminForm', {message: "Server Error! Please Try Again"});
@@ -1673,6 +1676,7 @@ app.get('/admin-pending/:pendingId', (req, res)=> {
     const {pendingId} = req.params;
     PendingWithdrawal.findOne({_id: pendingId}, (err, pending)=> {
         if(err) {
+		console.log(err);
             res.render('adminForm', {message: "Server Error! Please Try Again"});
         } else if(!pending) {
             res.render('adminForm', {message: "Server Error! Please Try Again"});
