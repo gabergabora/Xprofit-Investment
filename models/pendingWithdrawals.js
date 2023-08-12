@@ -6,7 +6,7 @@ const pendingWithdrawalSchema = new Schema({
     amount: String,
     wallet: String,
     status: String
-});
+});          
 
 const PendingWithdrawal = new mongoose.model("PendingWithdrawal", pendingWithdrawalSchema);
 
